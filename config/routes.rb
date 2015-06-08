@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get 'static_pages/help'
 
+  get 'static_pages/about' #在controller中没有about方法也能找到相应的about.html
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
