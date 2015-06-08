@@ -12,3 +12,7 @@
 !/log/.keep
 /tmp
 .idea/*
+# Ignore bundler config.
+#/.bundle
+# Ignore Spring files.
+/spring/*.pid
