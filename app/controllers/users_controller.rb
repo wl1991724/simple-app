@@ -28,6 +28,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      log_in @user #注册完成后登入用户
       flash[:success] = '欢迎来到我的博客'
       redirect_to user_url(@user) # redirect @user
     else
