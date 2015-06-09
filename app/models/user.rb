@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i #抄来的邮箱regex，这个是常量
 
-  before_save { self.email=email.downcase } #保存前把邮箱统一换成小写 {self.email=self.email.downcase}
+  before_save { self.email=email.downcase } #保存前把邮箱统一换成小写 {self.email=self.email.downcase} or {email.downcase!}
 
   validates :name, presence: {message: '名字不能为空！'},
             length: {maximum: 50, too_long: '名字太长！'}

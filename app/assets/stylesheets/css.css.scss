@@ -17,10 +17,11 @@ textarea {
 
 .center {
   text-align: center;
-  h1{
+  h1 {
     margin-bottom: 10px;
   }
 }
+
 //
 //.center h1 {
 //  margin-bottom: 10px;
@@ -60,12 +61,12 @@ p {
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
-  &:hover{ //sass语法
+  &:hover {
+    //sass语法
     color: #fff;
     text-decoration: none;
   }
 }
-
 
 //footer
 footer {
@@ -95,4 +96,86 @@ footer ul {
 footer ul li {
   float: left;
   margin-left: 15px;
+}
+
+/* mixins, variables, etc. */
+$gray-medium-light: #eaeaea;
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* sidebar */
+aside {
+  section.user_info {
+    margin-top: 20px;
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+/* forms */
+///注册表单/
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+$state-danger-text: red;
+//错误消息的样式
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.has-error {
+  //@extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
 }

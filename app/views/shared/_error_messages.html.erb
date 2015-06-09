@@ -1,0 +1,13 @@
+<% if @user.errors.any? %>
+    <div id="error_explanation">
+      <div class="alert alert-danger">
+        <!--pluralize就是把根据错误数量把单词变成复数形式，对中文并没有什么卵用-->
+        表单包含 <%= @user.errors.count %> 错误！
+      </div>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
